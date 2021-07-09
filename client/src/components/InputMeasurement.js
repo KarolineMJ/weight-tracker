@@ -22,24 +22,34 @@ const InputMeasurement = () => {
 
     return (
         <Fragment>
-            <h1 className="text-center mt-5">Input Measurement</h1>
-            <form className="d-flex mt-5" onSubmit={onSubimitForm}>
-                <input
-                    type="date"
-                    className="measure_date"
-                    name="measure_date"
-                    value={measure_date}
-                    onChange={(e) => setDate(e.target.value)}
-                />
-                <input
-                    type="text"
-                    className="weight"
-                    name="weight"
-                    value={weight}
-                    onChange={(e) => setWeight(e.target.value)}
-                />
-                <button className="btn btn-success">Add</button>
-            </form>
+            <div className="form-header">
+                <h1 className="text-center mt-5">WEIGHT TRACKER</h1>
+                <div className="measure-form">
+                    <form className="d-flex mt-5" onSubmit={onSubimitForm}>
+                        <input
+                            type="date"
+                            className="measure_date"
+                            name="measure_date"
+                            value={measure_date}
+                            onChange={(e) => setDate(e.target.value)}
+                            required
+                        />
+                                                <input
+                            type="number"
+                            className="weight"
+                            name="weight"
+                            placeholder="Weight"
+                            value={weight}
+                            onChange={(e) => setWeight(e.target.value)}
+                            required
+                            min="1"
+                            max="999"
+                            step=".1"
+                        />
+                        <button className="btn btn-success">Add</button>
+                    </form>
+                </div>
+            </div>
         </Fragment>
     );
 };

@@ -40,7 +40,8 @@ const ListMeasurements = () => {
 
     return (
         <Fragment>
-            <table class="table mt-5" text-center>
+            <div className="wrap-table">
+            <table className="table mt-5" text-center>
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -73,6 +74,7 @@ const ListMeasurements = () => {
                     ))}
                 </tbody>
             </table>
+            </div>
         </Fragment>
     );
 };

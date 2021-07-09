@@ -28,7 +28,7 @@ const EditMeasurements = ({ measurement }) => {
         <Fragment>
             <button
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 data-bs-toggle="modal"
                 data-bs-target={`#id${measurement.id}`}
             >
@@ -36,27 +36,23 @@ const EditMeasurements = ({ measurement }) => {
             </button>
 
             <div
-                class="modal fade"
+                className="modal fade"
                 id={`id${measurement.id}`}
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabIndex="-1"
+                aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
-                onClick={() =>
-                    setDate(
-                        measurement.measure_date,
-                        setWeight(measurement.weight)
-                    )
-                }
             >
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
                                 Edit measurement
                             </h5>
                             <button
                                 type="button"
-                                class="btn-close"
+                                className="btn-close"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"
                                 onClick={() =>
@@ -67,24 +63,30 @@ const EditMeasurements = ({ measurement }) => {
                                 }
                             ></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
+                        <form class="needs-validation" novalidate>
                             <input
                                 type="date"
                                 className="form-control"
                                 value={measure_date}
                                 onChange={(e) => setDate(e.target.value)}
+                                required
                             />
                             <input
-                                type="text"
+                                type="number"
                                 className="form-control"
                                 value={weight}
                                 onChange={(e) => setWeight(e.target.value)}
+                                required
+                                min="1"
+                                max="999.99"
                             />
+                            </form>
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                             <button
-                                type="button"
-                                class="btn btn-secondary"
+                                type="submit"
+                                className="btn btn-secondary"
                                 data-bs-dismiss="modal"
                                 onClick={() =>
                                     setDate(
@@ -97,7 +99,7 @@ const EditMeasurements = ({ measurement }) => {
                             </button>
                             <button
                                 type="button"
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 data-bs-dismiss="modal"
                                 onClick={(e) => updateMeasurements(e)}
                             >

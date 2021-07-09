@@ -1,10 +1,73 @@
+html, body {
+    margin: 0;
+    height: 100%;
+	background: linear-gradient(45deg,#4158d0,#58e28d);
+	background-repeat: no-repeat,
+}
 .App {
   text-align: center;
+  padding: 30px;
 }
 
+.container {
+	width: 40%;
+}
+h1{
+	font-size: 60px;
+	color: teal;
+	font-family: system-ui;
+	text-shadow: 2px 2px #cbf0d9;
+
+}
+.form-header{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 25px;
+	background-color: white;
+	border-radius: 10px;
+}
+.wrap-table{
+	background-color: white;
+	border-radius: 10px;
+}
+table{
+	border: none;
+	vertical-align: middle;
+	border-bottom-color: none;
+	
+}
+thead{
+	border-bottom: 2px solid #cbf0d9;
+}
+tbody, td, tfoot, tr {
+	border-style: none;
+	font-family: sans-serif;
+}
+td, th{
+	width: 25%;
+	text-align: center;
+}
 .d-flex {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  border: #cbf0d9;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: montserrat, sans-serif;
+}
+
+input, button {
+	border: none;
+	outline: none;
+	background: none;
+	width: 50%;
+	padding: 5px;
 }
