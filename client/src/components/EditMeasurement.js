@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 const EditMeasurements = ({ measurement }) => {
+    const fetch = require("node-fetch");
     const [measure_date, setDate] = useState(measurement.measure_date);
     const [weight, setWeight] = useState(measurement.weight);
 
@@ -9,7 +10,16 @@ const EditMeasurements = ({ measurement }) => {
         e.preventDefault();
         try {
             const body = { measure_date, weight };
-            const response = await fetch(
+            if( weight <= 0 || weight >= 1000){
+                alert("The weight value must be greater than 0 and less than 1000");
+                setDate(
+                    measurement.measure_date,
+                    setWeight(measurement.weight)
+                )
+                return;
+                
+            }
+            await fetch(
                 `http://localhost:5000/measurements/${measurement.id}`,
                 {
                     method: "PUT",
@@ -25,7 +35,7 @@ const EditMeasurements = ({ measurement }) => {
     };
 
     return (
-        <Fragment>
+        <div className="wrap-edit">
             <button
                 type="button"
                 className="btn btn-primary"
@@ -64,39 +74,26 @@ const EditMeasurements = ({ measurement }) => {
                             ></button>
                         </div>
                         <div className="modal-body">
-                        <form class="needs-validation" novalidate>
-                            <input
-                                type="date"
-                                className="form-control"
-                                value={measure_date}
-                                onChange={(e) => setDate(e.target.value)}
-                                required
-                            />
-                            <input
-                                type="number"
-                                className="form-control"
-                                value={weight}
-                                onChange={(e) => setWeight(e.target.value)}
-                                required
-                                min="1"
-                                max="999.99"
-                            />
+                            <form class="needs-validation" novalidate>
+                                <input
+                                    type="date"
+                                    className="form-control"
+                                    value={measure_date}
+                                    onChange={(e) => setDate(e.target.value)}
+                                    required
+                                />
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    value={weight}
+                                    onChange={(e) => setWeight(e.target.value)}
+                                    required
+                                    min="1"
+                                    max="999.99"
+                                />
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button
-                                type="submit"
-                                className="btn btn-secondary"
-                                data-bs-dismiss="modal"
-                                onClick={() =>
-                                    setDate(
-                                        measurement.measure_date,
-                                        setWeight(measurement.weight)
-                                    )
-                                }
-                            >
-                                Close
-                            </button>
                             <button
                                 type="button"
                                 className="btn btn-primary"
@@ -109,7 +106,7 @@ const EditMeasurements = ({ measurement }) => {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </div>
     );
 };
 

@@ -1,19 +1,17 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import EditMeasurements from "./EditMeasurement";
 
 const ListMeasurements = () => {
+    const fetch = require("node-fetch");
     const [measurements, setMeasurements] = useState([]);
 
     //delete measurement function
 
     const deleteMeasurement = async (id) => {
         try {
-            const deleteMeasurement = await fetch(
-                `http://localhost:5000/measurements/${id}`,
-                {
-                    method: "DELETE",
-                }
-            );
+            await fetch(`http://localhost:5000/measurements/${id}`, {
+                method: "DELETE",
+            });
 
             setMeasurements(
                 measurements.filter((measurement) => measurement.id !== id)
@@ -39,9 +37,8 @@ const ListMeasurements = () => {
     }, []);
 
     return (
-        <Fragment>
-            <div className="wrap-table">
-            <table className="table mt-5" text-center>
+        <div className="wrap-table">
+            <table className="table mt-5 text-center">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -54,7 +51,11 @@ const ListMeasurements = () => {
                     {measurements.map((measurement) => (
                         <tr key={measurement.id}>
                             <td>
-                                {(new Date(measurement.measure_date)).toLocaleDateString('en-GB', { timeZone: 'UTC' })}
+                                {new Date(
+                                    measurement.measure_date
+                                ).toLocaleDateString("en-GB", {
+                                    timeZone: "UTC",
+                                })}
                             </td>
                             <td>{measurement.weight}</td>
                             <td>
@@ -74,8 +75,7 @@ const ListMeasurements = () => {
                     ))}
                 </tbody>
             </table>
-            </div>
-        </Fragment>
+        </div>
     );
 };
 
