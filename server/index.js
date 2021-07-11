@@ -9,7 +9,7 @@ app.use(express.json());
 
 //ROUTES//
 
-//Create a measurement
+// Create a measurement
 
 app.post("/measurements", async (req, res) => {
     try {
@@ -38,7 +38,7 @@ app.get("/measurements", async (req, res) => {
     }
 });
 
-//update a measurement
+// Update a measurement
 
 app.put("/measurements/:id", async (req, res) => {
     try {
@@ -54,7 +54,7 @@ app.put("/measurements/:id", async (req, res) => {
     }
 });
 
-//delete a measurement
+// Delete a measurement
 
 app.delete("/measurements/:id", async (req, res) => {
     try {
