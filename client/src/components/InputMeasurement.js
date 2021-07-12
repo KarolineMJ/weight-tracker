@@ -33,6 +33,8 @@ const InputMeasurement = () => {
                         name="measure_date"
                         value={measure_date}
                         onChange={(e) => setDate(e.target.value)}
+                        min="1900-01-01"
+                        max="2100-01-01"
                         required
                     />
                     <input

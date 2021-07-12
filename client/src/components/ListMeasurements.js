@@ -53,9 +53,7 @@ const ListMeasurements = () => {
                             <td>
                                 {new Date(
                                     measurement.measure_date
-                                ).toLocaleDateString("en-GB", {
-                                    timeZone: "UTC",
-                                })}
+                                ).toLocaleDateString("en-GB")}
                             </td>
                             <td>{measurement.weight}</td>
                             <td>

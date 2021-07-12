@@ -20,6 +20,16 @@ const EditMeasurements = ({ measurement }) => {
                 );
                 return;
             }
+            else if (measure_date <= "1900-01-01" || measure_date >= "2100-01-01") {
+                alert(
+                    "The date must be greater than 01/01/1900 and less than 2100-01-01"
+                );
+                setDate(
+                    measurement.measure_date,
+                    setWeight(measurement.weight)
+                );
+                return;
+            }
             await fetch(
                 `http://localhost:5000/measurements/${measurement.id}`,
                 {
@@ -81,6 +91,8 @@ const EditMeasurements = ({ measurement }) => {
                                     className="form-control"
                                     value={measure_date}
                                     onChange={(e) => setDate(e.target.value)}
+                                    min="1900-01-01"
+                                    max="2100-01-01"
                                     required
                                 />
                                 <input
