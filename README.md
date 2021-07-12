@@ -1,5 +1,5 @@
 # Weight Tracker App
-Application to track weight over time using React, Node, Express and Postgres (Docker)
+Application to track weight over time using React, Node, Express and Postgres
 
 ### Installation
 
@@ -17,7 +17,7 @@ npm install
 ```
 npm run installapps
 ```
-4. Create postgres database using docker. Get [Docker]  :
+4. The application requires a Postgres database running on port 5432. You can setup one manually or via [Docker] with the following command:
 
 [Docker]:https://docs.docker.com/get-docker/
 ```
