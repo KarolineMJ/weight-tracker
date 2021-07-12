@@ -13,7 +13,7 @@ git clone https://github.com/maricarmello/weight-tracker
 npm install
 ```
 
-3. Go to the root of the project and install all project's dependencies:
+3. Go to the root of the project and install all project's dependencies: (this command can take a couple of seconds to finish)
 ```
 npm run installapps
 ```
