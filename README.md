@@ -11,7 +11,7 @@ git clone https://github.com/maricarmello/weight-tracker
 
 2. Go to the root of the project and install all project's dependencies:
 ```
-npm install
+npm installapps
 ```
 3. Create postgres database using docker. Get [Docker]  :
 
