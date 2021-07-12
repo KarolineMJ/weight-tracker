@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "concurrently": "^6.2.0",
-    "node-pg-migrate": "^5.10.0",
-    "pg": "^8.6.0"
+    "concurrently": "^6.2.0"
   },
   "devDependencies": {},
   "scripts": {
     "serverinstall": "cd server && npm install",
     "clientinstall": "cd client && npm install",
-    "install": "concurrently \"npm run serverinstall\" \"npm run clientinstall\"",
+    "rootinstall": "npm install",
+    "installapps": "concurrently \"npm run serverinstall\" \"npm run clientinstall\" npm run rootinstall\"",
     "server": "cd server && nodemon index.js",
     "client": "cd client && npm start ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
