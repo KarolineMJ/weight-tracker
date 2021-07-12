@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "migrate": "node-pg-migrate",
-    "test": "jest"
+    "test": "jest",
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
