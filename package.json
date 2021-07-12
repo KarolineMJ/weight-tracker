@@ -10,9 +10,8 @@
   "scripts": {
     "serverinstall": "cd server && npm install",
     "clientinstall": "cd client && npm install",
-    "rootinstall": "npm install",
-    "installapps": "concurrently \"npm run serverinstall\" \"npm run clientinstall\" npm run rootinstall\"",
-    "server": "cd server && nodemon index.js",
+    "installapps": "concurrently \"npm run serverinstall\" \"npm run clientinstall\"",
+    "server": "cd server && npm run server",
     "client": "cd client && npm start ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "servertest": "cd server && npm run test",
