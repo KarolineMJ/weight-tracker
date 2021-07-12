@@ -5,7 +5,7 @@ const ListMeasurements = () => {
     const fetch = require("node-fetch");
     const [measurements, setMeasurements] = useState([]);
 
-    //delete measurement function
+    // Delete measurement function
 
     const deleteMeasurement = async (id) => {
         try {

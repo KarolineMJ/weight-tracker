@@ -19,7 +19,7 @@ h1 {
     font-family: system-ui;
     text-shadow: 2px 2px #cbf0d9;
 }
-.form-main {
+.wrap-form {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 25px;

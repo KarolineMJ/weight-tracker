@@ -1,8 +1,8 @@
 import React from "react";
 import "regenerator-runtime/runtime";
-import './App.css';
+import "./App.css";
 
-//components
+// Components
 
 import InputMeasurement from "./components/InputMeasurement";
 import ListMeasurements from "./components/ListMeasurements";

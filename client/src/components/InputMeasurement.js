@@ -5,6 +5,7 @@ const InputMeasurement = () => {
     const [measure_date, setDate] = useState("");
     const [weight, setWeight] = useState("");
 
+    // Submit new measurement function
     const onSubimitForm = async (e) => {
         e.preventDefault();
         try {
@@ -22,7 +23,7 @@ const InputMeasurement = () => {
     };
 
     return (
-        <div className="form-main">
+        <div className="wrap-form">
             <h1 className="text-center mt-5">WEIGHT TRACKER</h1>
             <div className="measure-form">
                 <form className="d-flex mt-5" onSubmit={onSubimitForm}>

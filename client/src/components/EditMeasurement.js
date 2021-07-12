@@ -5,19 +5,20 @@ const EditMeasurements = ({ measurement }) => {
     const [measure_date, setDate] = useState(measurement.measure_date);
     const [weight, setWeight] = useState(measurement.weight);
 
-    //edit measurement function
+    // Update measurement function
     const updateMeasurements = async (e) => {
         e.preventDefault();
         try {
             const body = { measure_date, weight };
-            if( weight <= 0 || weight >= 1000){
-                alert("The weight value must be greater than 0 and less than 1000");
+            if (weight <= 0 || weight >= 1000) {
+                alert(
+                    "The weight value must be greater than 0 and less than 1000"
+                );
                 setDate(
                     measurement.measure_date,
                     setWeight(measurement.weight)
-                )
+                );
                 return;
-                
             }
             await fetch(
                 `http://localhost:5000/measurements/${measurement.id}`,
@@ -74,7 +75,7 @@ const EditMeasurements = ({ measurement }) => {
                             ></button>
                         </div>
                         <div className="modal-body">
-                            <form class="needs-validation" novalidate>
+                            <form className="needs-validation">
                                 <input
                                     type="date"
                                     className="form-control"
@@ -90,6 +91,7 @@ const EditMeasurements = ({ measurement }) => {
                                     required
                                     min="1"
                                     max="999.99"
+                                    step=".1"
                                 />
                             </form>
                         </div>
