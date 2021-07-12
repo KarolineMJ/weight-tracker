@@ -39,3 +39,7 @@ Run tests:
 ```
 npm run test
 ```
+
+### Known Issues
+
+  - There's an issue with updating the date in some OS's (tested on MacOS with chrome) where the date gets subtracted by 1 day
