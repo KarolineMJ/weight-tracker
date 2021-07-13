@@ -1,5 +1,5 @@
 # Weight Tracker App
-Application to track weight over time using React, Node, Express and Postgres
+Application to track weight over time using React, Node.js, Express and Postgres
 
 ### Installation
 
