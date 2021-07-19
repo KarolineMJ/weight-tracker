@@ -2,6 +2,7 @@
 - You are able to set a date en the future
 - You can create a measurement back to the 1900
 - Do you have experience with other UI libraries ?
+- Did you consider making a graph?
 
 #### Backend 
 - Are you familiar with graphql ? What is the view on this? 
